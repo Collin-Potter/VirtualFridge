@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="fridge_black">#de000000</color>
+    <color name="fridge_gray_50">#fafafa</color>
+    <color name="fridge_gray_50_a600">#99fafafa</color>
+    <color name="fridge_green_3001">#6dc790</color>
+    <color name="fridge_green_5001">#49bb79</color>
+    <color name="fridge_green_7001">#005d2b</color>
+    <color name="fridge_green_900">#1a231e</color>
+    <color name="fridge_white">#deffffff</color>
+    <color name="fridge_yellow_3001">#f8f99f</color>
+    <color name="fridge_yellow_5001">#ffff63</color>
+
+    <color name="fridge_green_300">#6D98C7</color>
+    <color name="fridge_green_500">#496FBB</color>
+    <color name="fridge_green_700">#001F5D</color>hh
+
+    <color name="fridge_yellow_300">#deffffff</color>
+    <color name="fridge_yellow_500">#deffffff</color>
+</resources>

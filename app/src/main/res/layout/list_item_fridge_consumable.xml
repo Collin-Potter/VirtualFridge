@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="viewModel"
+            type="com.example.virtualfridge.viewmodels.ConsumableAndFridgeConsumablesViewModel" />
+
+    </data>
+
+    <com.example.virtualfridge.views.MaskedCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_side_margin"
+        android:layout_marginEnd="@dimen/card_side_margin"
+        android:layout_marginBottom="@dimen/card_bottom_margin"
+        android:onClick="@{clickListener}"
+        app:cardElevation="@dimen/card_elevation"
+        app:cardPreventCornerOverlap="false"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Fridge.Card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/consumable_item_image_height"
+                android:contentDescription="@string/picture_of_consumable"
+                android:scaleType="centerCrop"
+                app:imageFromUrl="@{viewModel.imageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/consumable_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="@{viewModel.consumableName}"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView"/>
+
+            <TextView
+                android:id="@+id/consumable_date_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="@string/consumable_date_header"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:textColor="?attr/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/consumable_name"/>
+
+            <TextView
+                android:id="@+id/consumable_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@{viewModel.consumableDateString}"
+                android:gravity="center_horizontal"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/consumable_date_header"/>
+
+            <TextView
+                android:id="@+id/restocked_date_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="@string/restocked_date_header"
+                android:textStyle="bold"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:textColor="?attr/colorAccent"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/consumable_date"/>
+
+            <TextView
+                android:id="@+id/restock_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@{viewModel.restockDateString}"
+                android:gravity="center_horizontal"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/restocked_date_header" />
+
+            <TextView
+                android:id="@+id/restock_interval"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="@dimen/margin_normal"
+                android:text="@{@plurals/restocking_next(viewModel.restockInterval, viewModel.restockInterval)}"
+                android:gravity="center_horizontal"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/restock_date"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.example.virtualfridge.views.MaskedCardView>
+
+</layout>

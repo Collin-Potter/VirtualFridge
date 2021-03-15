@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">VirtualFridge</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_consumable">Add consumable</string>
+    <string name="fridge_empty">Your fridge is empty</string>
+    <string name="consumable_item_image_desc">Picture of consumable</string>
+    <string name="my_fridge_title">My fridge</string>
+    <string name="consumable_list_title">Consumable list</string>
+    <string name="menu_item_share_consumable">Share</string>
+    <string name="restocking_needs_prefix">Restocking needs</string>
+    <string name="gallery_content_description">Navigate to gallery screen</string>
+    <string name="consumable_details_title">Consumable details</string>
+    <string name="picture_of_consumable">Picture of consumable</string>
+    <string name="restocked_date_header">Last Restocked</string>
+    <string name="consumable_date_header">Purchased</string>
+    <plurals name="restocking_next">
+        <item quantity="one" translation_description="Text indicating when the the consumable should next be restocked, singular. Used in conjunction with last restocked date. 'May 24, 2020 - restock tomorrow.'.">restock tomorrow.</item>
+        <item quantity="other" translation_description="Text indicating when the the consumable should next be restocked, plural. Used in conjunction with last restoced date. 'May 24, 2020 - restock in 8 days.'.">restock in %d days.</item>
+    </plurals>
+</resources>
